@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafc;
+  --foreground: #1b1238;
+  --primary: #5b3df5;
+  --primary-secondary: #8b5cf6;
+  --accent: #67e8f9;
+  --muted: #6b6680;
+  --border: rgba(27, 18, 56, 0.08);
+  --glass: rgba(255, 255, 255, 0.72);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-secondary: var(--primary-secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-glass: var(--glass);
+  --color-dark: #1b1238;
+  --font-sans: var(--font-jakarta);
+  --font-thai: var(--font-plex-thai);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta), var(--font-plex-thai), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--primary) 22%, white);
+  color: var(--foreground);
+}
+
+.font-thai {
+  font-family: var(--font-plex-thai), var(--font-jakarta), system-ui, sans-serif;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(91, 61, 245, 0.14), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 20%, rgba(139, 92, 246, 0.12), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 60% 90%, rgba(103, 232, 249, 0.1), transparent 55%),
+    #fafafc;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-page {
+    max-width: 80rem;
+  }
 }
