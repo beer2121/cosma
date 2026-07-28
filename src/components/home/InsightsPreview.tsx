@@ -25,7 +25,7 @@ export function InsightsPreview({
   locale: Locale;
   dict: Dictionary;
 }) {
-  const articles = getFeaturedContent("insights", locale, 4);
+  const articles = getFeaturedContent("insights", locale, 2);
 
   return (
     <Section>
@@ -47,7 +47,7 @@ export function InsightsPreview({
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
           {articles.map((item, index) => {
             const Icon = insightCategoryIcons[item.category] ?? Brain;
             return (

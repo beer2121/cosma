@@ -26,17 +26,17 @@ const partnerLogos = [
   { name: "Pelco", file: "pelco.svg" },
 ] as const;
 
-const pendingPartners = ["EnGenius", "SYSTIMAX Solutions", "ADC KRONE", "AMP NETCONNECT"];
+const marqueeLogos = [...partnerLogos, ...partnerLogos];
 
 export function PartnersShowcase({ dict }: { dict: Dictionary }) {
   return (
-    <Section className="gradient-mesh py-16 md:py-20">
+    <Section className="gradient-mesh py-12 md:py-20">
       <Container>
         <Reveal>
           <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-muted">
             {dict.trusted.label}
           </p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {dict.trusted.items.map((item) => (
               <span
                 key={item}
@@ -47,49 +47,32 @@ export function PartnersShowcase({ dict }: { dict: Dictionary }) {
             ))}
           </div>
 
-          <p className="mt-10 text-sm font-semibold tracking-tight text-primary">
+          <p className="mt-8 text-sm font-semibold tracking-tight text-primary">
             {dict.partners.eyebrow}
           </p>
-          <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="mt-2 text-balance text-2xl font-semibold tracking-tight md:text-4xl">
             {dict.partners.title}
           </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted md:text-base">
-            {dict.partners.description}
-          </p>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-            {partnerLogos.map((logo) => (
-              <div
-                key={logo.name}
-                className="flex h-12 items-center justify-center md:h-14"
-              >
-                <Image
-                  src={`/assets/partners/${logo.file}`}
-                  alt={`${logo.name} logo`}
-                  width={170}
-                  height={52}
-                  className="h-auto max-h-10 w-auto max-w-[170px] opacity-95"
-                />
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div className="mt-10 border-t border-border pt-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-              {dict.partners.missingLabel}
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {pendingPartners.map((name) => (
-                <span
-                  key={name}
-                  className="rounded-full border border-border bg-white/60 px-3 py-1 text-xs text-muted"
+          <div className="relative mt-8 overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#fafafc] to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#fafafc] to-transparent" />
+            <div className="partner-marquee-track items-center gap-12 py-2">
+              {marqueeLogos.map((logo, index) => (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="flex h-10 w-28 shrink-0 items-center justify-center md:h-12 md:w-32"
                 >
-                  {name}
-                </span>
+                  <Image
+                    src={`/assets/partners/${logo.file}`}
+                    alt={`${logo.name} logo`}
+                    width={128}
+                    height={40}
+                    className="h-auto max-h-9 w-auto max-w-[128px] opacity-95 md:max-h-10"
+                  />
+                </div>
               ))}
             </div>
           </div>

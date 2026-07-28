@@ -34,6 +34,7 @@ export const th: Dictionary = {
     exploreSolutions: "ดูโซลูชัน",
     bookConsultation: "นัดปรึกษา",
     viewAllInsights: "ดูบทความทั้งหมด",
+    viewAllIndustries: "ดูอุตสาหกรรมทั้งหมด",
     read: "อ่าน",
     navigate: "เมนู",
     contact: "ติดต่อ",

@@ -32,6 +32,7 @@ export const en = {
     exploreSolutions: "Explore Solutions",
     bookConsultation: "Book Consultation",
     viewAllInsights: "View all insights",
+    viewAllIndustries: "View all industries",
     read: "Read",
     navigate: "Navigate",
     contact: "Contact",
@@ -504,6 +505,7 @@ export type Dictionary = {
     | "exploreSolutions"
     | "bookConsultation"
     | "viewAllInsights"
+    | "viewAllIndustries"
     | "read"
     | "navigate"
     | "contact"

@@ -71,6 +71,46 @@ body {
   text-wrap: balance;
 }
 
+.scroll-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-row > * {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+@keyframes partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: partner-marquee 42s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee-track {
+    animation: none;
+  }
+}
+
 .container-page {
   width: 100%;
   max-width: 72rem;

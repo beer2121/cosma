@@ -25,8 +25,8 @@ export function ChallengesSolutions({
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {dict.challenges.items.slice(0, 3).map((item, index) => {
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {dict.challenges.items.slice(0, 2).map((item, index) => {
             const Icon = challengeIcons[index];
             return (
               <Reveal key={item.title} delay={index * 0.08}>
@@ -49,8 +49,8 @@ export function ChallengesSolutions({
           })}
         </div>
 
-        <Reveal delay={0.1}>
-          <div className="mt-14">
+        <Reveal delay={0.08}>
+          <div className="mt-10">
             <SectionHeading
               eyebrow={dict.solutions.eyebrow}
               title={dict.solutions.title}
@@ -59,14 +59,14 @@ export function ChallengesSolutions({
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {dict.solutions.items.slice(0, 4).map((item, index) => {
+        <div className="scroll-row mt-8 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible">
+          {dict.solutions.items.slice(0, 3).map((item, index) => {
             const Icon = solutionIcons[item.id];
             return (
               <Reveal key={item.id} delay={index * 0.05}>
                 <Link
                   href={`${localePath(locale, "/solutions")}#${item.id}`}
-                  className="group flex h-full flex-col rounded-3xl border border-border bg-background p-6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/25 hover:bg-white"
+                  className="group flex h-full w-[min(85vw,20rem)] flex-col rounded-3xl border border-border bg-background p-6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/25 hover:bg-white md:w-auto"
                 >
                   <div className="flex items-start justify-between gap-3">
                     {Icon ? <SectionIcon icon={Icon} size="sm" /> : null}
@@ -83,6 +83,16 @@ export function ChallengesSolutions({
             );
           })}
         </div>
+
+        <Reveal delay={0.1}>
+          <Link
+            href={localePath(locale, "/solutions")}
+            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary"
+          >
+            {dict.common.exploreSolutions}
+            <ArrowUpRight className="size-4" />
+          </Link>
+        </Reveal>
       </Container>
     </Section>
   );

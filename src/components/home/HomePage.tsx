@@ -6,7 +6,7 @@ import { Ecosystem } from "@/components/home/Ecosystem";
 import { PartnersShowcase } from "@/components/home/PartnersShowcase";
 import { IndustriesCTA } from "@/components/home/IndustriesCTA";
 import { WhyProcess } from "@/components/home/WhyProcess";
-import { InsightsPreview } from "@/components/home/InsightsPreview";
+import { ProcessInsights } from "@/components/home/ProcessInsights";
 
 export function HomePage({
   locale,
@@ -23,7 +23,7 @@ export function HomePage({
       <PartnersShowcase dict={dict} />
       <IndustriesCTA locale={locale} dict={dict} />
       <WhyProcess dict={dict} />
-      <InsightsPreview locale={locale} dict={dict} />
+      <ProcessInsights locale={locale} dict={dict} />
     </>
   );
 }

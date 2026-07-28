@@ -51,14 +51,14 @@ export function Hero({
   return (
     <section
       ref={rootRef}
-      className="relative min-h-[100svh] overflow-hidden gradient-mesh"
+      className="relative min-h-[78svh] overflow-hidden gradient-mesh md:min-h-[100svh]"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -right-16 bottom-10 size-[24rem] rounded-full bg-accent/20 blur-3xl" />
       </div>
 
-      <Container className="relative flex min-h-[100svh] flex-col justify-center pb-20 pt-28 md:pb-28 md:pt-32">
+      <Container className="relative flex min-h-[78svh] flex-col justify-center pb-16 pt-24 md:min-h-[100svh] md:pb-28 md:pt-32">
         <div className="grid items-center gap-16 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p
