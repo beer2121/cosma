@@ -3,9 +3,7 @@ export const SITE = {
   legalName: "COSMA Solution Co., Ltd.",
   legalNameTh: "บริษัท คอสม่า โซลูชั่น จำกัด",
   url: "https://www.cosma.co.th",
-  email: "jr@cosma.co.th",
-  phone: "0818662958",
-  phoneDisplay: "081 866 2958",
+  email: "sales@cosma.co.th",
   taxId: "0125546005628",
   address: {
     en: "12 Moo 1, Khiri Wong, Plai Phraya, Krabi 81160, Thailand",

@@ -52,14 +52,6 @@ export function Footer({
             <ul className="mt-4 space-y-3 text-sm text-muted">
               <li>
                 <a
-                  href={`tel:${SITE.phone}`}
-                  className="transition-colors hover:text-foreground"
-                >
-                  {SITE.phoneDisplay}
-                </a>
-              </li>
-              <li>
-                <a
                   href={`mailto:${SITE.email}`}
                   className="transition-colors hover:text-foreground"
                 >

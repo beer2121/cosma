@@ -60,7 +60,7 @@ export default async function ContactPage({
                 {dict.contact.formDescription}
               </p>
               <div className="mt-8">
-                <ContactForm dict={dict} />
+                <ContactForm locale={locale} dict={dict} />
               </div>
             </div>
 
@@ -70,15 +70,6 @@ export default async function ContactPage({
                   {dict.contact.directTitle}
                 </h2>
                 <ul className="mt-5 space-y-4 text-sm">
-                  <li>
-                    <p className="text-muted">{dict.contact.phone}</p>
-                    <a
-                      href={`tel:${SITE.phone}`}
-                      className="mt-1 block font-medium hover:text-primary"
-                    >
-                      {SITE.phoneDisplay}
-                    </a>
-                  </li>
                   <li>
                     <p className="text-muted">{dict.contact.email}</p>
                     <a

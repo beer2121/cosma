@@ -55,6 +55,7 @@ export const en = {
         { label: "Network", href: "/solutions#network" },
         { label: "System Integration", href: "/solutions#integration" },
         { label: "Managed Services", href: "/solutions#managed" },
+        { label: "IT Equipment Rental", href: "/solutions#it-rental" },
       ],
     },
     {
@@ -191,6 +192,12 @@ export const en = {
         title: "Managed Services",
         description:
           "Long-term support, operations, and continuous improvement.",
+      },
+      {
+        id: "it-rental",
+        title: "IT Equipment Rental",
+        description:
+          "Flexible rental for PCs, all-in-ones, notebooks, printers, and related devices.",
       },
     ],
   },
@@ -468,13 +475,80 @@ export const en = {
     contactPlaceholder: "Email or phone number",
     message: "Message",
     messagePlaceholder: "Tell us about your project or challenge",
-    formSuccess: "Your email client should open with the message ready to send.",
+    submitting: "Sending...",
+    formSuccess:
+      "Thank you. Your message has been sent — our team will contact you shortly.",
+    formError:
+      "We could not send your message. Please try again or email us directly.",
     directTitle: "Direct contact",
-    phone: "Phone",
     email: "Email",
     website: "Website",
     officeTitle: "Head office",
     mailSubject: "Consultation request from",
+  },
+  rentalQuote: {
+    categoriesTitle: "Equipment we rent",
+    categoriesDescription:
+      "Short- or long-term rental for office and project needs — with delivery, setup, and support options.",
+    categories: [
+      {
+        id: "pc",
+        title: "Desktop PC",
+        description: "Workstations for office, back-office, and counter use.",
+      },
+      {
+        id: "all-in-one",
+        title: "All-in-One",
+        description: "Space-saving desktops with integrated display.",
+      },
+      {
+        id: "notebook",
+        title: "Notebook",
+        description: "Laptops for mobile teams, events, and temporary projects.",
+      },
+      {
+        id: "printer",
+        title: "Printer & MFP",
+        description: "Printers and multifunction devices for document workflows.",
+      },
+      {
+        id: "monitor",
+        title: "Monitor & peripherals",
+        description: "Displays, docking stations, and related accessories.",
+      },
+      {
+        id: "other",
+        title: "Other IT equipment",
+        description: "Scanners, projectors, and devices tailored to your scope.",
+      },
+    ],
+    formTitle: "Request a rental quote",
+    formDescription:
+      "Tell us what you need. Our sales team will prepare a quotation for your organization.",
+    company: "Name / Company",
+    companyPlaceholder: "Your name or organization",
+    contactField: "Email or phone",
+    contactPlaceholder: "Email or phone number",
+    equipmentLabel: "Equipment of interest",
+    equipmentTypes: [
+      { id: "pc", label: "Desktop PC" },
+      { id: "all-in-one", label: "All-in-One" },
+      { id: "notebook", label: "Notebook" },
+      { id: "printer", label: "Printer & MFP" },
+      { id: "monitor", label: "Monitor & peripherals" },
+      { id: "other", label: "Other" },
+    ],
+    quantity: "Quantity & rental period (optional)",
+    quantityPlaceholder: "e.g. 20 notebooks for 12 months",
+    message: "Additional details",
+    messagePlaceholder: "Specs, delivery location, start date, or other requirements",
+    submit: "Request quote",
+    submitting: "Sending...",
+    formSuccess:
+      "Thank you. Your quote request has been sent — our sales team will contact you shortly.",
+    formError:
+      "We could not send your request. Please try again or email us directly.",
+    mailSubject: "IT rental quote request from",
   },
 };
 
@@ -655,12 +729,35 @@ export type Dictionary = {
     contactPlaceholder: string;
     message: string;
     messagePlaceholder: string;
+    submitting: string;
     formSuccess: string;
+    formError: string;
     directTitle: string;
-    phone: string;
     email: string;
     website: string;
     officeTitle: string;
+    mailSubject: string;
+  };
+  rentalQuote: {
+    categoriesTitle: string;
+    categoriesDescription: string;
+    categories: { id: string; title: string; description: string }[];
+    formTitle: string;
+    formDescription: string;
+    company: string;
+    companyPlaceholder: string;
+    contactField: string;
+    contactPlaceholder: string;
+    equipmentLabel: string;
+    equipmentTypes: { id: string; label: string }[];
+    quantity: string;
+    quantityPlaceholder: string;
+    message: string;
+    messagePlaceholder: string;
+    submit: string;
+    submitting: string;
+    formSuccess: string;
+    formError: string;
     mailSubject: string;
   };
 };

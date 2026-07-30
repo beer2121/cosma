@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-export function ContactForm({
+export function RentalQuoteForm({
   locale,
   dict,
 }: {
@@ -16,23 +16,29 @@ export function ContactForm({
   dict: Dictionary;
 }) {
   const [status, setStatus] = useState<Status>("idle");
+  const { rentalQuote } = dict;
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
 
+    const equipment = rentalQuote.equipmentTypes
+      .filter((item) => data.get(`equipment-${item.id}`) === "on")
+      .map((item) => item.label);
+
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/rental-quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: data.get("name"),
+          company: data.get("company"),
           contact: data.get("contact"),
+          quantity: data.get("quantity"),
           message: data.get("message"),
-          website: data.get("website"),
+          equipment,
           locale,
         }),
       });
@@ -51,70 +57,95 @@ export function ContactForm({
 
   return (
     <form onSubmit={onSubmit} className="space-y-5">
-      <div className="hidden" aria-hidden="true">
-        <label htmlFor="contact-website">Website</label>
-        <input
-          id="contact-website"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-        />
-      </div>
       <div>
-        <label htmlFor="name" className="text-sm font-medium">
-          {dict.contact.name}
+        <label htmlFor="rental-company" className="text-sm font-medium">
+          {rentalQuote.company}
         </label>
         <input
-          id="name"
-          name="name"
+          id="rental-company"
+          name="company"
           required
           className="mt-2 h-12 w-full rounded-2xl border border-border bg-white px-4 text-sm outline-none transition focus:border-primary/40 focus:ring-2 focus:ring-primary/15"
-          placeholder={dict.contact.namePlaceholder}
+          placeholder={rentalQuote.companyPlaceholder}
         />
       </div>
+
       <div>
-        <label htmlFor="contact" className="text-sm font-medium">
-          {dict.contact.contactField}
+        <label htmlFor="rental-contact" className="text-sm font-medium">
+          {rentalQuote.contactField}
         </label>
         <input
-          id="contact"
+          id="rental-contact"
           name="contact"
           required
           className="mt-2 h-12 w-full rounded-2xl border border-border bg-white px-4 text-sm outline-none transition focus:border-primary/40 focus:ring-2 focus:ring-primary/15"
-          placeholder={dict.contact.contactPlaceholder}
+          placeholder={rentalQuote.contactPlaceholder}
         />
       </div>
+
+      <fieldset>
+        <legend className="text-sm font-medium">
+          {rentalQuote.equipmentLabel}
+        </legend>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+          {rentalQuote.equipmentTypes.map((item) => (
+            <label
+              key={item.id}
+              className="flex cursor-pointer items-center gap-3 rounded-2xl border border-border bg-white px-4 py-3 text-sm transition hover:border-primary/25"
+            >
+              <input
+                type="checkbox"
+                name={`equipment-${item.id}`}
+                className="size-4 rounded border-border text-primary focus:ring-primary/30"
+              />
+              <span>{item.label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
       <div>
-        <label htmlFor="message" className="text-sm font-medium">
-          {dict.contact.message}
+        <label htmlFor="rental-quantity" className="text-sm font-medium">
+          {rentalQuote.quantity}
+        </label>
+        <input
+          id="rental-quantity"
+          name="quantity"
+          className="mt-2 h-12 w-full rounded-2xl border border-border bg-white px-4 text-sm outline-none transition focus:border-primary/40 focus:ring-2 focus:ring-primary/15"
+          placeholder={rentalQuote.quantityPlaceholder}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="rental-message" className="text-sm font-medium">
+          {rentalQuote.message}
         </label>
         <textarea
-          id="message"
+          id="rental-message"
           name="message"
-          required
-          rows={5}
+          rows={4}
           className="mt-2 w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm outline-none transition focus:border-primary/40 focus:ring-2 focus:ring-primary/15"
-          placeholder={dict.contact.messagePlaceholder}
+          placeholder={rentalQuote.messagePlaceholder}
         />
       </div>
+
       <Button
         type="submit"
         size="lg"
         className="w-full sm:w-auto"
         disabled={status === "sending"}
       >
-        {status === "sending"
-          ? dict.contact.submitting
-          : dict.common.bookConsultation}
+        {status === "sending" ? rentalQuote.submitting : rentalQuote.submit}
       </Button>
+
       {status === "sent" ? (
         <p aria-live="polite" className="text-sm font-medium text-primary">
-          {dict.contact.formSuccess}
+          {rentalQuote.formSuccess}
         </p>
       ) : null}
       {status === "error" ? (
         <p aria-live="polite" className="text-sm text-muted">
-          {dict.contact.formError}{" "}
+          {rentalQuote.formError}{" "}
           <a
             href={`mailto:${SITE.email}`}
             className="font-medium text-primary underline underline-offset-4"

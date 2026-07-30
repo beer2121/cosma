@@ -57,6 +57,7 @@ export const th: Dictionary = {
         { label: "เครือข่าย", href: "/solutions#network" },
         { label: "เชื่อมต่อระบบ", href: "/solutions#integration" },
         { label: "บริการดูแลระบบ", href: "/solutions#managed" },
+        { label: "เช่าอุปกรณ์ IT", href: "/solutions#it-rental" },
       ],
     },
     {
@@ -185,6 +186,12 @@ export const th: Dictionary = {
         id: "managed",
         title: "บริการดูแลระบบ",
         description: "สนับสนุนระยะยาว การดำเนินงาน และพัฒนาอย่างต่อเนื่อง",
+      },
+      {
+        id: "it-rental",
+        title: "เช่าอุปกรณ์ IT",
+        description:
+          "เช่า PC, All-in-One, Notebook, ปริ้นเตอร์ และอุปกรณ์ที่เกี่ยวข้องแบบยืดหยุ่น",
       },
     ],
   },
@@ -455,12 +462,79 @@ export const th: Dictionary = {
     contactPlaceholder: "อีเมลหรือเบอร์โทร",
     message: "ข้อความ",
     messagePlaceholder: "บอกเราเกี่ยวกับโครงการหรือความท้าทายของคุณ",
-    formSuccess: "โปรแกรมอีเมลของคุณควรเปิดขึ้น พร้อมข้อความสำหรับส่ง",
+    submitting: "กำลังส่ง...",
+    formSuccess:
+      "ขอบคุณครับ ส่งข้อความเรียบร้อยแล้ว ทีมงานจะติดต่อกลับโดยเร็ว",
+    formError:
+      "ส่งข้อความไม่สำเร็จ กรุณาลองอีกครั้ง หรือติดต่อเราทางอีเมลโดยตรง",
     directTitle: "ติดต่อโดยตรง",
-    phone: "โทรศัพท์",
     email: "อีเมล",
     website: "เว็บไซต์",
     officeTitle: "สำนักงานใหญ่",
     mailSubject: "คำขอนัดปรึกษาจาก",
+  },
+  rentalQuote: {
+    categoriesTitle: "อุปกรณ์ที่ให้เช่า",
+    categoriesDescription:
+      "เช่าระยะสั้นหรือยาว สำหรับออฟฟิศและโครงการ — พร้อมตัวเลือกจัดส่ง ติดตั้ง และดูแล",
+    categories: [
+      {
+        id: "pc",
+        title: "คอมพิวเตอร์ตั้งโต๊ะ (PC)",
+        description: "เครื่องทำงานสำหรับออฟฟิศ แคชเชียร์ และงานหลังบ้าน",
+      },
+      {
+        id: "all-in-one",
+        title: "All-in-One",
+        description: "คอมพิวเตอร์รวมจอ ประหยัดพื้นที่บนโต๊ะทำงาน",
+      },
+      {
+        id: "notebook",
+        title: "โน้ตบุ๊ก (Notebook)",
+        description: "แล็ปท็อปสำหรับทีมเคลื่อนที่ งานอีเวนต์ และโครงการชั่วคราว",
+      },
+      {
+        id: "printer",
+        title: "ปริ้นเตอร์ & เครื่องพิมพ์อเนกประสงค์",
+        description: "เครื่องพิมพ์และ MFP สำหรับงานเอกสารในองค์กร",
+      },
+      {
+        id: "monitor",
+        title: "จอภาพและอุปกรณ์เสริม",
+        description: "จอมอนิเตอร์ ด็อกกิ้งสเตชัน และอุปกรณ์ที่เกี่ยวข้อง",
+      },
+      {
+        id: "other",
+        title: "อุปกรณ์ IT อื่นๆ",
+        description: "สแกนเนอร์ โปรเจคเตอร์ และอุปกรณ์ตามขอบเขตที่ต้องการ",
+      },
+    ],
+    formTitle: "ขอใบเสนอราคาเช่าอุปกรณ์",
+    formDescription:
+      "บอกความต้องการของคุณ ทีมขายจะจัดทำใบเสนอราคาให้องค์กรของคุณ",
+    company: "ชื่อ / บริษัท",
+    companyPlaceholder: "ชื่อของคุณหรือชื่อองค์กร",
+    contactField: "อีเมลหรือโทรศัพท์",
+    contactPlaceholder: "อีเมลหรือเบอร์โทร",
+    equipmentLabel: "อุปกรณ์ที่สนใจ",
+    equipmentTypes: [
+      { id: "pc", label: "คอมพิวเตอร์ตั้งโต๊ะ (PC)" },
+      { id: "all-in-one", label: "All-in-One" },
+      { id: "notebook", label: "โน้ตบุ๊ก (Notebook)" },
+      { id: "printer", label: "ปริ้นเตอร์ & MFP" },
+      { id: "monitor", label: "จอภาพและอุปกรณ์เสริม" },
+      { id: "other", label: "อื่นๆ" },
+    ],
+    quantity: "จำนวนและระยะเวลาเช่า (ไม่บังคับ)",
+    quantityPlaceholder: "เช่น โน้ตบุ๊ก 20 เครื่อง ระยะ 12 เดือน",
+    message: "รายละเอียดเพิ่มเติม",
+    messagePlaceholder: "สเปก สถานที่จัดส่ง วันเริ่มงาน หรือข้อกำหนดอื่นๆ",
+    submit: "ขอใบเสนอราคา",
+    submitting: "กำลังส่ง...",
+    formSuccess:
+      "ขอบคุณครับ ส่งคำขอใบเสนอราคาเรียบร้อยแล้ว ทีมขายจะติดต่อกลับโดยเร็ว",
+    formError:
+      "ส่งคำขอไม่สำเร็จ กรุณาลองอีกครั้ง หรือติดต่อเราทางอีเมลโดยตรง",
+    mailSubject: "คำขอใบเสนอราคาเช่าอุปกรณ์ IT จาก",
   },
 };

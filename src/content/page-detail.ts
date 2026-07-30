@@ -142,6 +142,25 @@ const en: Record<string, SolutionDetail> = {
       "A partner that grows with your organization",
     ],
   },
+  "it-rental": {
+    overview:
+      "Reduce upfront CapEx with flexible IT equipment rental — from desktop PCs and all-in-ones to notebooks, printers, and related peripherals. COSMA delivers ready-to-use devices with optional delivery, setup, maintenance, and replacement aligned to your contract.",
+    capabilities: [
+      "Desktop PC and workstation rental",
+      "All-in-One devices for compact workspaces",
+      "Notebook and laptop programs for teams and projects",
+      "Printer and multifunction device (MFP) rental",
+      "Monitors, docking stations, and peripherals",
+      "Flexible short- and long-term rental terms",
+      "Delivery, installation, and ongoing support options",
+    ],
+    outcomes: [
+      "Predictable operating expense instead of large hardware purchases",
+      "Scale device counts up or down with project and headcount changes",
+      "Faster deployment with devices ready for work",
+      "A single partner for rental, support, and lifecycle management",
+    ],
+  },
 };
 
 const th: Record<string, SolutionDetail> = {
@@ -271,6 +290,25 @@ const th: Record<string, SolutionDetail> = {
       "การสนับสนุนระบบสำคัญที่คาดการณ์ได้",
       "ลด downtime และการหยุดชะงัก",
       "พาร์ทเนอร์ที่เติบโตไปพร้อมองค์กร",
+    ],
+  },
+  "it-rental": {
+    overview:
+      "ลดค่าใช้จ่ายลงทุนด้านฮาร์ดแวร์ด้วยบริการเช่าอุปกรณ์ IT แบบยืดหยุ่น — ตั้งแต่ PC ตั้งโต๊ะ All-in-One โน้ตบุ๊ก ปริ้นเตอร์ และอุปกรณ์เสริมที่เกี่ยวข้อง COSMA จัดส่งเครื่องพร้อมใช้งาน พร้อมตัวเลือกจัดส่ง ติดตั้ง ดูแล และเปลี่ยนเครื่องตามเงื่อนไขสัญญา",
+    capabilities: [
+      "เช่าคอมพิวเตอร์ตั้งโต๊ะและเวิร์กสเตชัน",
+      "เช่า All-in-One สำหรับพื้นที่ทำงานจำกัด",
+      "โปรแกรมเช่าโน้ตบุ๊กสำหรับทีมและโครงการ",
+      "เช่าปริ้นเตอร์และเครื่องพิมพ์อเนกประสงค์ (MFP)",
+      "จอภาพ ด็อกกิ้งสเตชัน และอุปกรณ์เสริม",
+      "เงื่อนไขเช่าระยะสั้นและระยะยาวที่ยืดหยุ่น",
+      "ตัวเลือกจัดส่ง ติดตั้ง และดูแลต่อเนื่อง",
+    ],
+    outcomes: [
+      "ควบคุมงบประมาณเป็นรายเดือนแทนการซื้อเครื่องครั้งใหญ่",
+      "ปรับจำนวนเครื่องตามโครงการและจำนวนพนักงานได้",
+      "ได้เครื่องพร้อมใช้งานเร็วขึ้น",
+      "พาร์ทเนอร์เดียวดูแลการเช่า สนับสนุน และวงจรชีวิตอุปกรณ์",
     ],
   },
 };

@@ -239,8 +239,7 @@ Preview cards: AI · Cloud · Security · Digital Transformation
 | Legal TH | บริษัท คอสม่า โซลูชั่น จำกัด (สำนักงานใหญ่) |
 | Address | 12 หมู่ที่ 1 ต.คีรีวง อ.ปลายพระยา จ.กระบี่ 81160 |
 | Tax ID | 0125546005628 |
-| Mobile | 0818662958 |
-| Email | jr@cosma.co.th |
+| Email | sales@cosma.co.th |
 | Website | www.cosma.co.th |
 
 ---
@@ -305,6 +304,7 @@ public/assets/          # brand assets
 
 - Component-driven · type-safe · no duplicated content blobs
 - Contact form MVP: `mailto:` (ยังไม่ต่อ Supabase)
+- Rental quote form: ส่งเมลจริงผ่าน `POST /api/rental-quote` (SMTP — ตั้งค่าตาม `.env.example`)
 
 ---
 

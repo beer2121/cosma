@@ -71,7 +71,6 @@ export function organizationJsonLd() {
     alternateName: SITE.legalNameTh,
     url: SITE.url,
     email: SITE.email,
-    telephone: SITE.phone,
     address: {
       "@type": "PostalAddress",
       streetAddress: "12 Moo 1, Khiri Wong",

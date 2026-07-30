@@ -10,6 +10,7 @@ import {
 } from "@/content/page-detail";
 import { Breadcrumb, PageHero } from "@/components/shared/PageHero";
 import { SolutionDetailBlock } from "@/components/solutions/SolutionDetailBlock";
+import { ItRentalSection } from "@/components/solutions/ItRentalSection";
 import { Container, Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 
@@ -74,6 +75,9 @@ export default async function SolutionsPage({
                       outcomes: labels.outcomes,
                     }}
                   />
+                  {item.id === "it-rental" ? (
+                    <ItRentalSection locale={locale} dict={dict} />
+                  ) : null}
                 </div>
               );
             })}

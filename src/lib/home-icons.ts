@@ -14,7 +14,9 @@ import {
   Headphones,
   HeartPulse,
   Landmark,
+  Laptop,
   Lock,
+  Monitor,
   Network,
   RefreshCw,
   Server,
@@ -44,6 +46,7 @@ export const solutionIcons: Record<string, LucideIcon> = {
   network: Network,
   integration: Workflow,
   managed: Headphones,
+  "it-rental": Laptop,
 };
 
 export const industryIcons: Record<string, LucideIcon> = {
